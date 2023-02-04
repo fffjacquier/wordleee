@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Guess = ({ guess }) => {
-  console.log(guess);
+const Guess = ({ guess, checks }) => {
+  console.log(guess, checks);
   const letters = guess.split('');
 
   return (
     <p className="guess">
       {letters.map((letter, index) => (
-        <span class="cell" key={index}>
+        <span className={`cell ${checks[index] ? checks[index].status : ''}`} key={index}>
           {letter}
         </span>
       ))}
